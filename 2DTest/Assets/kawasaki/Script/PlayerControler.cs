@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
-{
-    public float speed = 5.0f;  //移動スピード
-    float axisH;                //縦軸
-    float axisV;                //横軸
-    Rigidbody2D rbody;          //Rigidbody2D
-                                //
+{   
+    public float speed = 5.0f;           //移動スピード
+    float axisH;                         //縦軸
+    float axisV;                         //横軸
+    Rigidbody2D rbody;                   //Rigidbody2D
+   
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,9 @@ public class PlayerControler : MonoBehaviour
     {
         axisH = Input.GetAxisRaw("Horizontal");     //左右キー入力
         axisV = Input.GetAxisRaw("Vertical");       //上下キー入力
+
+      
+
     }
 
     private void FixedUpdate()
