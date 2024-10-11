@@ -2,13 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControler : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {   
     public float speed = 5.0f;           //移動スピード
+    int direction = 0;                   //移動方向
     float axisH;                         //縦軸
     float axisV;                         //横軸
     Rigidbody2D rbody;                   //Rigidbody2D
+    public float angleZ = 90;            //回転角度
+    public GameObject bullet;            
+    Vector3 createPosition;
+
    
+    
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +30,15 @@ public class PlayerControler : MonoBehaviour
         axisH = Input.GetAxisRaw("Horizontal");     //左右キー入力
         axisV = Input.GetAxisRaw("Vertical");       //上下キー入力
 
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            createPosition = transform.position;
+            createPosition.y += 1.0f;
+
+            Instantiate(bullet, createPosition, Quaternion.identity);
+
+
+        }
       
 
     }
